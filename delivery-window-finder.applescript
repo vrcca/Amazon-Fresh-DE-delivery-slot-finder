@@ -4,9 +4,9 @@ set found_slot to false
 set oos_keyword to "We're sorry we are unable to fulfill your entire order"
 set oos_msg to "click 'continue' on out of stock page before closing this dialog box"
 set unknown_page_msg to "Unknown amazon page was loaded. try to manually navigate back to the 'Schedule your order page', and then run the program again"
-set slot_site_url to "https://www.amazon.com/gp/buy/shipoptionselect/handlers/display.html?hasWorkingJavascript=1"
-set slot_page_keyword to "Schedule your order"
-set no_slot_keyword to "No delivery windows available"
+set slot_site_url to "https://www.amazon.de/gp/buy/shipoptionselect/handlers/display.html?hasWorkingJavascript=1"
+set slot_page_keyword to "Select a time"
+set no_slot_keyword to "New slots are opened throughout the day."
 set is_first_run to true
 set auto_ignore_oos to true
 
@@ -15,8 +15,8 @@ Would you like the script to:
 A. automatically ignore the warnings so it keep looking for slots (recommended)
 B. stop searching for slots until you manually review what went out of stock?"
 
-set wfm_cart_url to "https://www.amazon.com/cart/localmarket"
-set fresh_cart_url to "https://www.amazon.com/cart/fresh"
+set wfm_cart_url to "https://www.amazon.de/cart/localmarket"
+set fresh_cart_url to "https://www.amazon.de/cart/fresh"
 set selected_cart_url to ""
 
 -- for clicking functionality
@@ -40,7 +40,7 @@ set welcomeMsg to "Welcome to Delivery Slot Search Tool!
 
 INSTRUCTIONS:
 -
-1. Sign into Amazon.com in Safari
+1. Sign into Amazon.de in Safari. ATTENTION!! Make sure the page is displayed in English. You can change at the bottom of the page.
 2. Fill your grocery cart
 3. Manually start and continue the checkout process until you arrive at the delivery slot page. The session is now initialized. Close this slot page. It's no longer needed.
 4. Turn up the volume to hear the announcement when a slot is found
@@ -195,8 +195,8 @@ if javascriptEnabled then
 	end repeat
 	
 	-- 4. Prompt for delivery service type
-	set servicePrompt to display dialog "What delivery service do you want to use this script for?" buttons {"Cancel", "Whole Foods via Amazon.com", "Amazon Fresh"} with icon note with title "Which Service?"
-	if button returned of servicePrompt = "Whole Foods via Amazon.com" then
+	set servicePrompt to display dialog "What delivery service do you want to use this script for?" buttons {"Cancel", "Whole Foods via Amazon.de (Unavailable)", "Amazon Fresh"} with icon note with title "Which Service?"
+	if button returned of servicePrompt = "Whole Foods via Amazon.de (Unavailable)" then
 		set selected_cart_url to wfm_cart_url
 	else if button returned of servicePrompt = "Amazon Fresh" then
 		set selected_cart_url to fresh_cart_url
