@@ -40,7 +40,7 @@ set welcomeMsg to "Welcome to Delivery Slot Search Tool!
 
 INSTRUCTIONS:
 -
-1. Sign into Amazon.de in Safari. ATTENTION!! Make sure the page is displayed in English. You can change at the bottom of the page.
+1. Sign into Amazon.de in Safari. Make sure The page is displayed in English. You can change at the bottom of the page.
 2. Fill your grocery cart
 3. Manually start and continue the checkout process until you arrive at the delivery slot page. The session is now initialized. Close this slot page. It's no longer needed.
 4. Turn up the volume to hear the announcement when a slot is found
